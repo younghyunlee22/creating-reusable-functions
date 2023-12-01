@@ -66,12 +66,21 @@ let peopleArray = [
 
 // Sort the array by age.
 peopleArray.sort((a, b) => parseInt(a.age) - parseInt(b.age));
-console.log(peopleArray);
+// console.log(peopleArray);
 
 // Filter the array to remove entries with an age greater than 50.
-console.log(peopleArray.filter((people) => people.age <= 50));
+// console.log(peopleArray.filter((people) => people.age <= 50));
 
 // Map the array to change the "occupation" key to "job" and increment every age by 1.
+
+let mapArray1 = peopleArray.map((person) => {
+  person.age = parseInt(person.age) + 1;
+  person["job"] = person["occupation"];
+  delete person.occupation;
+  return person;
+});
+
+console.log(mapArray1);
 
 // Use the reduce method to calculate the sum of the ages.
 
